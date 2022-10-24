@@ -1,2 +1,2 @@
 # full-stack-project
- Curso desenvolvido pelo Cod3r através da plataforma Udemy.
+ Projeto desenvolvido pelo Cod3r através da plataforma Udemy.
