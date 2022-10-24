@@ -18,7 +18,9 @@
     <nav>
         <a href wm-nav="exercicios/teste.html">00 - Teste</a>
         <a href wm-nav="exercicios/texto1.html">01 - Texto 1</a>
-        <a href wm-nav="exercicios/texto2.html">01 - Texto 2</a>
+        <a href wm-nav="exercicios/texto2.html">02 - Texto 2</a>
+        <a href wm-nav="exercicios/listas.html">03 - Listas</a>
+        <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a>
     </nav>
     <section id="conteudo"></section>
     <footer>Curso de Web Moderno</footer>
@@ -28,8 +30,8 @@
             link.onclick = function(e) {
             e.preventDefault()
             fetch(link.getAttribute('wm-nav'))
-            .then(resp => resp.text())
-            .then(html => conteudo.innerHTML = html)
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html)
         }
         })
     </script>
