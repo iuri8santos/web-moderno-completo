@@ -1,6 +1,7 @@
 <div wm-slider>
     <P>
-        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342" title="Muro da Cidade por Tarso Bessa">
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342"
+            title="Muro da Cidade por Tarso Bessa">
     </P>
     <p>
         <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" height="342">
@@ -9,11 +10,12 @@
         <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342">
     </p>
     <p class="texto">
-        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50"> <!--align="left"-->
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo dolor sit nisi amet? Provident vel, quaerat unde assumenda temporibus eaque sed sit ipsum nihil? Deserunt aliquid excepturi suscipit corporis alias!
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50">
+        <!--align="left"-->
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo dolor sit nisi amet? Provident vel, quaerat unde
+        assumenda temporibus eaque sed sit ipsum nihil? Deserunt aliquid excepturi suscipit corporis alias!
     </p>
     <p class="cidade">
-    
     </p>
     <p>
         <picture>
@@ -37,8 +39,7 @@
     .texto img {
         margin-right: 10px;
     }
-    .cidade
-    {
+    .cidade {
         width: 513px;
         height: 342px;
         background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
@@ -79,20 +80,39 @@
     }
     slider()
 </script> -->
-
 <script>
     function mover(elem, inicio, fim, passo, callback) {
         const novoInicio = inicio - passo
-        if(novoInicio >= fim) {
+        if (novoInicio >= fim) {
             elem.style.left = novoInicio + 'px'
             setTimeout(() => mover(elem, novoInicio, fim, passo, callback, 7)
         } else {
             callback()
         }
     }
-    const p = document.querySelector('[wm-slider] > p')
-    p.style.display = 'block'
-    mover(p, 1500, -520, 5, () => {
-        console.log('Terminou!!!')
-    })
+    //const p = document.querySelector('[wm-slider] > p')
+    // p.style.display = 'block'
+    //mover(p, 1500, -520, 5, () => {
+    //   console.log('Terminou!!!')
+    //})
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])
+    }
+    function exibirSlide(slides, slides) {
+        slide.style.display = 'block'
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+        slide.style.left = '$(inicio)px'
+        mover(slide, inicio, fim, 5, () => {
+            //slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i = < lista.lenght ?lista[i] : lista[0]
+    }
+    slider()
 </script>
