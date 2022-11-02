@@ -33,7 +33,7 @@
         const video = document.getElementById(id)
         video.oncontextmenu = () => false
         document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
-        document.querySelector(`[wm-play=${id}]`).onclick = e => video.pause()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
     }
     configurarVideo('meuVideo')
 </script>
