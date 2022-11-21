@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='UTF-8'>
     <title>Modificando HTML #02</title>
     <link rel='stylesheet' href='css/estilo.css'>
 </head>
-
 <body class='conteudo exercicio'>
     <div>
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        const div = document.querySelector('div')
+        div.innerHTML = 'Texto alterado!'
+        // div.outerHTML = 'Texto Alterado!'
+        div.insertAdjacentHTML('beforebegin', '<p>Antes início</p>')
+        div.insertAdjacentHTML('afterbegin', '<p>Depois início</p>')
+        div.insertAdjacentHTML('beforeend', '<p>Antes fim</p>')
+
+        //somente texto, sem tags
+        console.log(div.innerText)
     </script>
 </body>
-
 </html>
