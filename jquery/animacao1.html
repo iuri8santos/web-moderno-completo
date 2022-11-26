@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='UTF-8'>
     <title>Animação #01</title>
@@ -16,13 +15,18 @@
         }
     </style>
 </head>
-
 <body class='conteudo exercicio'>
     <h1>Animação #01</h1>
     <button>Iniciar</button>
     <div id='animar'>Animar!</div>
-
     <script>        
-        // ...
+        $('button').click(e => {
+            const t = 1000
+            $('#animar').hide(t).show(t)
+            // $('#animar').toggle(t).toggle(t)
+            $('#animar').fadeOut(t).fadeIn(t)
+            // $('#animar').fadeToggle(t).fadeToggle(t)
+            $('#animar').slideUp(t).slideDown(t)
+        })
     </script>
 </body>

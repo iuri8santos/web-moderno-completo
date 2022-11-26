@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='UTF-8'>
     <title>Plugin #01</title>
     <link rel='stylesheet' href='css/estilo.css'>
     <script src='js/jquery.js'></script>
 </head>
-
 <body class='conteudo exercicio'>
     <h1>Plugin #01</h1>
     <div>
@@ -20,8 +18,11 @@
         {{ (function() { return 'Legal!!!' })() }}
         Texto Final
     </div>
-
     <script>
-        // ...
+        (function($) {
+            $.fn.interpretar = function() {
+                
+            }
+        })
     </script>
 </body>
