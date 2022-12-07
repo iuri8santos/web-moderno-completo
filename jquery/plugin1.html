@@ -31,6 +31,7 @@
                     conteudoFinal = conteudoFinal.replace(expressoesComChaves[i].resultados[i])
                 }
                 $(this).html(conteudoFinal)
+                return this
             }
         })(jQuery)
         $('div').interpretar()
