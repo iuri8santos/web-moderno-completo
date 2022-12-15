@@ -1,4 +1,4 @@
-# full-stack-project
+# Web Moderno Completo
  Projeto desenvolvido pelo Cod3r através da plataforma Udemy.
 
 Seja muito bem vindo ao Curso Desenvolvimento Web Moderno com JavaScript! COMPLETO 2020 + Projetos! Esse que talvez seja o maior e mais completo curso de tecnologia do mercado. São 694 aulas divididas em 33 capítulos com 97 horas e 3 minutos. Além dos fundamentos e vários exercícios, são vários projetos com as principais tecnologias da atualidade com aplicação na vida real, te ensinando a ser um desenvolvedor Web desde o básico até ao nível profissional avançado. Neste curso você vai aprender os 3 principais frameworks do mercado: Angular, React e VUE.
