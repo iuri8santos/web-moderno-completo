@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='UTF-8'>
     <title>Fetch API #02</title>
@@ -10,7 +9,6 @@
             display: flex;
             flex-direction: column;
         }
-
         form input,
         form select,
         form button {
@@ -19,7 +17,6 @@
         }
     </style>
 </head>
-
 <body class="conteudo exercicio">
     <h1>Formulário Via Fetch</h1>
     <form name="usuarioForm" action="formulario" method="post">
@@ -29,6 +26,31 @@
     </form>
     <div id="resultado"></div>
     <script>
-        // ...
+        document.usuarioForm.onsubmit = async e => {
+            e.preventDefault()
+            const form = e.target
+            const data = new FormData(form)
+            data.append('ajax', true)
+            const options = {
+                method: form.method,
+                body: new URLSearchParams(data)
+            }
+            const resultado = document.getElementById('resultado')
+            // fetch(form.action, options)
+            //     .then(resp => resp.json())
+            //     .then(json => {
+            //         resultado.innerHTML = JSON.stringify(json)
+            //     })
+            //     .catch(e => {
+            //         resultado.innerHTML = e
+            //     })
+            try {
+                const resp = await fetch(form.action, options)
+                const json = await resp.json()
+                resultado.innerHTML = JSON.stringify(json)
+            } catch (e) {
+                resultado.innerHTML = e
+            }
+        }
     </script>
 </body>
