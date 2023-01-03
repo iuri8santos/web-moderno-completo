@@ -23,13 +23,7 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "estilo.css"
-        new TerserPlugin({
-                parallel: true,
-                terserOptions: {
-                    ecma: 6,
-                },
-            }),
-        })
+        }),
     ],
     module: {
         rules: [{
@@ -40,6 +34,9 @@ module.exports = {
                 'css-loader', // Interpreta @import, url() ...
                 'sass-loader',
             ]
+        }, {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: ['file-loader']
         }]
     }
 }
