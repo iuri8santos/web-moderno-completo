@@ -11,6 +11,13 @@ module.exports = {
         filename: 'principal.js',
         path: __dirname + '/public'
     },
+    devServer: {
+        static: {
+            directory: "./public"
+        },
+        compress: true,
+        port: 9000
+    },
     optimization: {
         minimizer: [
             new CssMinimizerPlugin(),
@@ -29,10 +36,21 @@ module.exports = {
         rules: [{
             test: /\.s?[ac]ss$/,
             use: [
-                MiniCssExtractPlugin.loader, // Esse conflita com o debaixo
+                // MiniCssExtractPlugin.loader, // Esse conflita com o debaixo
+                {
+                    loader: MiniCssExtractPlugin.loader, 
+                    options: {
+                        publicPath: ''
+                    }
+                },
+                {
+                    loader: "css-loader",
+                    loader: "sass-loader",
+
+                }
                 // 'style-loader', // Adiciona CSS a DOM injetando a tag <style>
-                'css-loader', // Interpreta @import, url() ...
-                'sass-loader',
+                // 'css-loader', // Interpreta @import, url() ...
+                // 'sass-loader',
             ]
         }, {
             test: /\.(png|svg|jpg|gif)$/,
